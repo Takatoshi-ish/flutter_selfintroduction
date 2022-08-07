@@ -38,6 +38,8 @@ class MyApp extends StatelessWidget {
           ],
         ),
         body: SingleChildScrollView(
+          /// SingleChildScrollViewの中にPaddingが入ってるのはすばらしい！
+          /// これを逆にするとスクロール時に余白が残ってしまうので。
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
