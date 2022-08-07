@@ -1,7 +1,7 @@
 # flutter_selfintroduction
 
 ## Flutterの教科書 実践課題
-### Widgetの基礎『Twitter UI』
+### ６章 Widgetの基礎『Twitter UI』
 
 A. 自己紹介ページを作ってみよう
 ここまで学んだことを活かして自己紹介ページを作ってみましょう。
