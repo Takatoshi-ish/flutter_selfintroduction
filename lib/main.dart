@@ -67,9 +67,15 @@ class MyApp extends StatelessWidget {
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               primary: Color.fromARGB(31, 203, 200, 200),
-                              // elevation: 0,
                             ),
-                            child: Text('プロフィール編集'),
+                            child: Text(
+                              'プロフィール編集',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold
+                                  // elevation: 0,
+                                  ),
+                            ),
                           ),
                         ),
                       ],
