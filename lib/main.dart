@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(const MyApp());
@@ -170,6 +171,9 @@ class MyApp extends StatelessWidget {
                         const url =
                             'https://github.com/Takatoshi-ish/flutter_selfintroduction';
                         launchUrl(Uri.parse(url));
+
+                        /// ↓ 下のようにすると string をそのまま扱うこともできます！
+                        // launchUrlString(url);
                       },
                     ),
                   ],
