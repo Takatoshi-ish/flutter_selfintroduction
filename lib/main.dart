@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(const MyApp());
@@ -254,6 +253,8 @@ class MyApp extends StatelessWidget {
                 const SizedBox(
                   height: 12,
                 ),
+
+                /// Dividerも使えててよい
                 const Divider(),
                 const SizedBox(
                   height: 8,
