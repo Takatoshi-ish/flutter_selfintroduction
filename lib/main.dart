@@ -1,115 +1,439 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      title: 'MyPage',
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'マイページ',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          backgroundColor: Color.fromARGB(255, 15, 15, 241),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 40.0,
+                      child: ClipRRect(
+                        child: Image.asset('assets/profile.png'),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Taka',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 250,
+                          height: 35,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(31, 203, 200, 200),
+                              // elevation: 0,
+                            ),
+                            child: Text('プロフィール編集'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(5.0),
+                  child: const Text(
+                    "社会人2年目 システムエンジニア（主にFlutterとcordovaを使って開発してます",
+                    softWrap: true,
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Tooltip(
+                  message: '入会日',
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.timelapse,
+                        color: Color.fromARGB(255, 160, 88, 0),
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      InkWell(
+                        child: Text(
+                          '2021/12/7に入会',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Tooltip(
+                  message: 'プラン',
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.computer,
+                        color: Colors.black54,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      InkWell(
+                        child: Text(
+                          '課題学習プラン',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(3),
+                      child: Image.asset(
+                        'assets/github.png',
+                        width: 18,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    InkWell(
+                      child: Text(
+                        'Takatoshi-ish',
+                      ),
+                      onTap: () async {
+                        final url =
+                            'https://github.com/Takatoshi-ish/flutter_selfintroduction';
+                        launchUrl(Uri.parse(url));
+                      },
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Tooltip(
+                  message: '居住地',
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.location_pin,
+                        color: Colors.black54,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      InkWell(
+                        child: Text(
+                          '東京',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                        onTap: () async {
+                          final url = 'https://goo.gl/maps/xwvjFVhMnqbhGsAB7';
+                          launchUrl(Uri.parse(url));
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.monetization_on_outlined,
+                      color: Colors.black54,
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    InkWell(
+                      child: Text(
+                        '650FUT',
+                      ),
+                      onTap: null,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Tooltip(
+                  message: 'エンジニアクラス',
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.hotel_class,
+                        color: Colors.black54,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        "Flutter 初心者",
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Divider(),
+                SizedBox(
+                  height: 8,
+                ),
+                Tooltip(
+                  message: '取得したバッジ',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.directions_run,
+                        color: Colors.black54,
+                      ),
+                      Text(
+                        '取得したバッジ',
+                      ),
+                      SizedBox(width: 150),
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        child: Text(
+                          'もっと見る>',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color.fromARGB(255, 15, 15, 241),
+                          ),
+                        ),
+                        onPressed: null,
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 16,
+                    ),
+                    BadgeTile("1ヶ月継続", Color.fromARGB(255, 1, 162, 68)),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    BadgeTile('3ヶ月継続', Color.fromARGB(255, 239, 127, 35)),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    BadgeTile('半年継続', Color.fromARGB(255, 160, 88, 0)),
+                  ],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Divider(),
+                SizedBox(
+                  height: 8,
+                ),
+                Tooltip(
+                  message: '趣味',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.directions_run,
+                        color: Colors.black54,
+                      ),
+                      Text(
+                        'サッカー, 散歩, 読書',
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            Text("質問Zoom"),
+                            Text("0回"),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text("共同勉強会"),
+                            Text("10回"),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text("コワーキング"),
+                            Text("4回"),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    TextButton(
+                      onPressed: null,
+                      style: TextButton.styleFrom(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      child: Text(
+                        'もっとみる',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color.fromARGB(255, 15, 15, 241),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Divider(),
+                SizedBox(
+                  height: 8,
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.auto_stories,
+                          color: Colors.black54,
+                        ),
+                        Text(
+                          'ポートフォリオ',
+                        ),
+                      ],
+                    ),
+                    TextButton(
+                      onPressed: null,
+                      style: TextButton.styleFrom(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      child: Text(
+                        '新しく作成する',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color.fromARGB(255, 15, 15, 241),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Divider(),
+              ],
+            ),
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class BadgeTile extends StatelessWidget {
+  String peridStr;
+  Color color;
+  BadgeTile(this.peridStr, this.color);
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+    return Column(
+      children: [
+        Icon(
+          Icons.timelapse,
+          color: color,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        InkWell(
+          child: Text(
+            '$peridStr',
+            style: TextStyle(
+              fontSize: 12,
+              color: color,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
