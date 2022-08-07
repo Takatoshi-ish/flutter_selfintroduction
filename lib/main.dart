@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,17 +15,17 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
+          title: const Text(
             'マイページ',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
           ),
-          backgroundColor: Color.fromARGB(255, 15, 15, 241),
+          backgroundColor: const Color.fromARGB(255, 15, 15, 241),
           actions: <Widget>[
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.settings,
                 color: Colors.white,
               ),
@@ -43,17 +43,17 @@ class MyApp extends StatelessWidget {
                     CircleAvatar(
                       radius: 40.0,
                       child: ClipRRect(
-                        child: Image.asset('assets/profile.png'),
                         borderRadius: BorderRadius.circular(50.0),
+                        child: Image.asset('assets/profile.png'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 16,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Taka',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -66,9 +66,9 @@ class MyApp extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(31, 203, 200, 200),
+                              primary: const Color.fromARGB(31, 203, 200, 200),
                             ),
-                            child: Text(
+                            child: const Text(
                               'プロフィール編集',
                               style: TextStyle(
                                   color: Colors.black,
@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 12,
                 ),
                 Container(
@@ -95,13 +95,13 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
                 Tooltip(
                   message: '入会日',
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.timelapse,
                         color: Color.fromARGB(255, 160, 88, 0),
@@ -117,13 +117,13 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Tooltip(
                   message: 'プラン',
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.computer,
                         color: Colors.black54,
@@ -139,7 +139,7 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Row(
@@ -152,37 +152,37 @@ class MyApp extends StatelessWidget {
                         color: Colors.black54,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 6,
                     ),
                     InkWell(
-                      child: Text(
+                      child: const Text(
                         'Takatoshi-ish',
                       ),
                       onTap: () async {
-                        final url =
+                        const url =
                             'https://github.com/Takatoshi-ish/flutter_selfintroduction';
                         launchUrl(Uri.parse(url));
                       },
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Tooltip(
                   message: '居住地',
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.location_pin,
                         color: Colors.black54,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       InkWell(
-                        child: Text(
+                        child: const Text(
                           '東京',
                           style: TextStyle(
                             color: Colors.black54,
@@ -191,18 +191,18 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                         onTap: () async {
-                          final url = 'https://goo.gl/maps/xwvjFVhMnqbhGsAB7';
+                          const url = 'https://goo.gl/maps/xwvjFVhMnqbhGsAB7';
                           launchUrl(Uri.parse(url));
                         },
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Icon(
                       Icons.monetization_on_outlined,
                       color: Colors.black54,
@@ -211,20 +211,20 @@ class MyApp extends StatelessWidget {
                       width: 6,
                     ),
                     InkWell(
+                      onTap: null,
                       child: Text(
                         '650FUT',
                       ),
-                      onTap: null,
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Tooltip(
                   message: 'エンジニアクラス',
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.hotel_class,
                         color: Colors.black54,
@@ -238,11 +238,11 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: 8,
                 ),
                 Tooltip(
@@ -250,20 +250,21 @@ class MyApp extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.apps,
                         color: Colors.black54,
                       ),
-                      Text(
+                      const Text(
                         '取得したバッジ',
                       ),
-                      SizedBox(width: 150),
+                      const SizedBox(width: 150),
                       TextButton(
                         style: TextButton.styleFrom(
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             fontWeight: FontWeight.normal,
                           ),
                         ),
+                        onPressed: null,
                         child: Text(
                           'もっと見る>',
                           style: TextStyle(
@@ -271,43 +272,42 @@ class MyApp extends StatelessWidget {
                             color: Color.fromARGB(255, 15, 15, 241),
                           ),
                         ),
-                        onPressed: null,
                       )
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 6,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 16,
                     ),
-                    BadgeTile("1ヶ月継続", Color.fromARGB(255, 1, 162, 68)),
-                    SizedBox(
+                    BadgeTile("1ヶ月継続", const Color.fromARGB(255, 1, 162, 68)),
+                    const SizedBox(
                       width: 20,
                     ),
-                    BadgeTile('3ヶ月継続', Color.fromARGB(255, 239, 127, 35)),
-                    SizedBox(
+                    BadgeTile('3ヶ月継続', const Color.fromARGB(255, 239, 127, 35)),
+                    const SizedBox(
                       width: 20,
                     ),
-                    BadgeTile('半年継続', Color.fromARGB(255, 160, 88, 0)),
+                    BadgeTile('半年継続', const Color.fromARGB(255, 160, 88, 0)),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: 8,
                 ),
                 Tooltip(
                   message: '趣味',
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
+                    children: const [
                       Icon(
                         Icons.directions_run,
                         color: Colors.black54,
@@ -318,7 +318,7 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 6,
                 ),
                 Column(
@@ -327,36 +327,36 @@ class MyApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Column(
-                          children: [
+                          children: const [
                             Text("質問Zoom"),
                             Text("0回"),
                           ],
                         ),
                         Column(
-                          children: [
+                          children: const [
                             Text("共同勉強会"),
                             Text("10回"),
                           ],
                         ),
                         Column(
-                          children: [
+                          children: const [
                             Text("コワーキング"),
                             Text("4回"),
                           ],
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     TextButton(
                       onPressed: null,
                       style: TextButton.styleFrom(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'もっとみる',
                         style: TextStyle(
                           fontSize: 12,
@@ -366,18 +366,18 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: 8,
                 ),
                 Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.auto_stories,
                           color: Colors.black54,
@@ -390,11 +390,11 @@ class MyApp extends StatelessWidget {
                     TextButton(
                       onPressed: null,
                       style: TextButton.styleFrom(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         '新しく作成する',
                         style: TextStyle(
                           fontSize: 12,
@@ -404,10 +404,10 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Divider(),
+                const Divider(),
               ],
             ),
           ),
@@ -432,7 +432,7 @@ class BadgeTile extends StatelessWidget {
         ),
         InkWell(
           child: Text(
-            '$peridStr',
+            peridStr,
             style: TextStyle(
               fontSize: 12,
               color: color,
