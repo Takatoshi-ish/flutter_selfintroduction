@@ -125,6 +125,8 @@ class MyApp extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
+
+                /// Tooltipを知ってるのはすごい。
                 Tooltip(
                   message: 'プラン',
                   child: Row(
