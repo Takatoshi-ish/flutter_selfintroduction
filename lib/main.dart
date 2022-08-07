@@ -190,6 +190,8 @@ class MyApp extends StatelessWidget {
                             decoration: TextDecoration.underline,
                           ),
                         ),
+
+                        /// タップしたらちゃんとマップ開いていてすごい。
                         onTap: () async {
                           const url = 'https://goo.gl/maps/xwvjFVhMnqbhGsAB7';
                           launchUrl(Uri.parse(url));
@@ -265,7 +267,7 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                         onPressed: null,
-                        child: Text(
+                        child: const Text(
                           'もっと見る>',
                           style: TextStyle(
                             fontSize: 12,
