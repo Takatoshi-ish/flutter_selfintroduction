@@ -77,10 +77,9 @@ class MyApp extends StatelessWidget {
                             child: const Text(
                               'プロフィール編集',
                               style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold
-                                  // elevation: 0,
-                                  ),
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
