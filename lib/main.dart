@@ -432,9 +432,9 @@ class MyApp extends StatelessWidget {
 }
 
 class BadgeTile extends StatelessWidget {
-  const BadgeTile(this.peridStr, this.color, {Key? key}) : super(key: key);
+  const BadgeTile(this.periodString, this.color, {Key? key}) : super(key: key);
 
-  final String peridStr;
+  final String periodString;
   final Color color;
 
   @override
@@ -447,7 +447,7 @@ class BadgeTile extends StatelessWidget {
         ),
         InkWell(
           child: Text(
-            peridStr,
+            periodString,
             style: TextStyle(
               fontSize: 12,
               color: color,
