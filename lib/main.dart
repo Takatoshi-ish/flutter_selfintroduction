@@ -245,7 +245,7 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Icon(
-                        Icons.directions_run,
+                        Icons.apps,
                         color: Colors.black54,
                       ),
                       Text(
