@@ -432,8 +432,8 @@ class MyApp extends StatelessWidget {
 }
 
 class BadgeTile extends StatelessWidget {
-  String peridStr;
-  Color color;
+  final String peridStr;
+  final Color color;
   BadgeTile(this.peridStr, this.color);
 
   @override
