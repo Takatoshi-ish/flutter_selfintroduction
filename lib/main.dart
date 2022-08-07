@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MyPage',
+
+      /// 別画面に遷移させたい場合MaterialAppのあとにbuildメソッドがないと動かないかもしれません。
+      /// いまどこかに遷移させることはないのでこのままで大丈夫です。
+      /// 参考: https://stackoverflow.com/questions/50124355/flutter-navigator-not-working
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
