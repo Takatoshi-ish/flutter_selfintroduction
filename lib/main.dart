@@ -295,19 +295,19 @@ class MyApp extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const SizedBox(
+                  children: const [
+                    SizedBox(
                       width: 16,
                     ),
-                    BadgeTile("1ヶ月継続", const Color.fromARGB(255, 1, 162, 68)),
-                    const SizedBox(
+                    BadgeTile("1ヶ月継続", Color.fromARGB(255, 1, 162, 68)),
+                    SizedBox(
                       width: 20,
                     ),
-                    BadgeTile('3ヶ月継続', const Color.fromARGB(255, 239, 127, 35)),
-                    const SizedBox(
+                    BadgeTile('3ヶ月継続', Color.fromARGB(255, 239, 127, 35)),
+                    SizedBox(
                       width: 20,
                     ),
-                    BadgeTile('半年継続', const Color.fromARGB(255, 160, 88, 0)),
+                    BadgeTile('半年継続', Color.fromARGB(255, 160, 88, 0)),
                   ],
                 ),
                 const SizedBox(
@@ -432,9 +432,10 @@ class MyApp extends StatelessWidget {
 }
 
 class BadgeTile extends StatelessWidget {
+  const BadgeTile(this.peridStr, this.color, {Key? key}) : super(key: key);
+
   final String peridStr;
   final Color color;
-  BadgeTile(this.peridStr, this.color);
 
   @override
   Widget build(BuildContext context) {
